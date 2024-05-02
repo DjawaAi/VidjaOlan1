@@ -25,11 +25,15 @@ public class Main {
 
         System.out.println();
         System.out.println("Упр. № 3");
-        int year = 1705;
+        int year = 2023;
         int diffYear = year - 1584;
         int remains = diffYear % 4;
-        if (year >= 1584 && remains == 0) {
-            System.out.println(year+ " год является високосным");
+        if (year >= 1584 && year % 400 == 0) {
+            System.out.println(year + " год является високосным");
+        } else if (year >= 1584 && year % 4 == 0) {
+            System.out.println(year + " год является високосным");
+        } else if (year >= 1584 && year % 100 == 0) {
+            System.out.println(year+ " год не является високосным");
         } else if (year >= 1584 && remains != 0){
             System.out.println(year+ " год не является високосным");
         } else if (year < 1584) {
@@ -52,30 +56,32 @@ public class Main {
 
         System.out.println();
         System.out.println("Упр. № 5");
-        int monthNumber = 22;
-        switch (monthNumber) {
-            case 12:
-            case 1:
-            case 2:
-                System.out.println(monthNumber+ " месяц относится к зиме");
-                break;
-            case 3:
-            case 4:
-            case 5:
-                System.out.println(monthNumber+ " месяц относится к весне");
-        break;
-            case 6:
-            case 7:
-            case 8:
-                System.out.println(monthNumber+ " месяц относится к лету");
-                break;
-            case 9:
-            case 10:
-            case 11:
-                System.out.println(monthNumber+ " месяц относится к осени");
-        break;
-            default:
-                System.out.println(monthNumber+ " несуществующий месяц");}
-
+        int monthNumber = 12;
+        if (monthNumber > 12) {
+            System.out.println("Число превышает количество месяцев в году");
+        } else {
+            switch (monthNumber) {
+                case 12:
+                case 1:
+                case 2:
+                    System.out.println(monthNumber + " месяц относится к зиме");
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    System.out.println(monthNumber + " месяц относится к весне");
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    System.out.println(monthNumber + " месяц относится к лету");
+                    break;
+                case 9:
+                case 10:
+                case 11:
+                    System.out.println(monthNumber + " месяц относится к осени");
+                    break;
+            }
+        }
     }
 }
